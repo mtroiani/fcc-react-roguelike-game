@@ -1,0 +1,715 @@
+@media only screen and (max-width: 768px) {
+  .non-essential {
+    display: none; } }
+
+body {
+  font-family: arial;
+  background: black; }
+
+#container {
+  background: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100vh; }
+
+.boardRow {
+  display: block;
+  height: 32px;
+  line-height: 32px; }
+
+.tile {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  line-height: 32px; }
+
+.level1 {
+  /*brown levels*/ }
+  .level1 .E {
+    background-color: black;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 0, -204px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level1 .R {
+    background-color: white;
+    background-image: url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat;
+    background-position: -204px 0px;
+    background-size: 1936px; }
+  .level1 .up.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -224px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .up.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -96px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .up.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -96px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .up.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -224px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .up.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px -96px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .down.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -128px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .down.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px 0px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .down.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px 0px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .down.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -128px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .down.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px 0px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .left.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -160px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .left.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -32px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .left.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -32px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .left.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -160px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .left.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px -32px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .right.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -192px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .right.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -64px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .right.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -64px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .right.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -192px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .right.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px -64px, -204px 0px;
+    background-size: 384px, 1936px; }
+  .level1 .food {
+    background-color: green;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1836px -510px, -204px 0px;
+    background-size: 1936px, 1936px; }
+  .level1 .gold {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1530px -374px, -204px 0px;
+    background-size: 1936px, 1936px; }
+  .level1 .silver {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1496px -374px, -204px 0px;
+    background-size: 1936px, 1936px; }
+  .level1 .diamonds {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -476px -374px, -204px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level1 .emeralds {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -510px -442px, -204px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level1 .rubies {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -476px -442px, -204px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level1 .amethyst {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -476px -408px, -204px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level1 .sharp {
+    background-color: red;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -510px -544px, -204px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level1 .fire {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1224px -306px, -204px 0px;
+    background-size: 1936px, 1936px; }
+  .level1 .frost {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1122px -306px, -204px 0px;
+    background-size: 1936px, 1936px; }
+  .level1 .static {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1190px -306px, -204px 0px;
+    background-size: 1936px, 1936px; }
+  .level1 .acid {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1836px -476px, -204px 0px;
+    background-size: 1936px, 1936px; }
+  .level1 .werewolf {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -68px 0, -648px -102px, -136px -34px, -104px -34px, -206px -136px, 0 -68px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .tourist {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -953px -170px, -682px -136px, -136px -136px, -104px -272px, -512px -238px, 0 0, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .daredevil {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1498px -238px, -68px 0, -68px 0, -784px 0, -104px 0, -68px -34px, -376px 0, -34px -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .hiker {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1428px -100px, -68px 0, -68px 0, -885.25px -136px, -104px 0, -68px -170px, -342px -102px, -33px 0, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .wizard {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1462px -67px, -68px 0, -986px -272px, -749.25px -272px, -138px -204px, -104px 0, -376px -238px, -33px -68px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .illuminati {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1124px -102px, -68px 0, -954px -238px, -715.25px -170px, -138px -272px, -102px -170px, -410px -68px, 0 -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .marauder {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1634px -68px, -68px 0, -1020px 0, -749.25px -102px, -138px 0, -102px 0, -512px -170px, 0 -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .larper {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1736px -272px, -1462px 0, -986px -238px, -851.25px -34px, -104px -136px, -102px -68px, -410px -136px, 0 -102px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .robot {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -1020px -204px, -68px 0, -138px -68px, -102px -68px, -410px -136px, 0 0, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .regent {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1600px -136px, -1292px -68px, -1020px -68px, -749.25px -136px, -138px -102px, -102px -102px, -274px -204px, -34px -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .scientist {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -68px 0, -716px -272px, -136px 0, -104px -68px, -410px -306px, 0 0, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .alien {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -1055px -272px, -70px 0, -68px 0, -70px 0, -70px 0, -34px -102px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .sorcerer {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1530px 0, -68px 0, -952px -272px, -784px -238px, -138px 0, -102px -34px, -376px -204px, 0 -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .explorer {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1532px -308px, -68px 0, -1054px -272px, -681.25px 0, -138px -238px, -102px -238px, -410px -136px, 0 -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .archaeologist {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1600px -204px, -68px 0, -952px -272px, -715.25px -136px, -104px -306px, -104px -170px, -342px 0, 0 0, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .knight {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 -374px, -204px 0px;
+    background-size: 1836px, 1936px; }
+  .level1 .diver {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1702px -170px, -68px 0, -68px 0, -885.25px -170px, -138px 0, -102px -102px, -478px -306px, -34px -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .barbarian {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1601px -304px, -68px 0, -952px -204px, -715.25px -102px, -138px 0, -102px 0, -512px -170px, 0 -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .pitfighter {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1532px -306px, -68px 0, -988px -204px, -784px -102px, -138px -34px, -102px -34px, -478px -204px, -34px -68px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .rogue {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1498px -238px, -68px 0, -68px 0, -715.25px -34px, -138px 0, -102px 0, -512px -170px, 0 -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level1 .tyrant {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1736px -170px, -1156px -272px, -1020px -68px, -749.25px 0, -138px -68px, -102px 0, -580px -204px, 0 -34px, -204px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+
+.level0 {
+  /*grey levels*/ }
+  .level0 .E {
+    background-color: black;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0px -34px, -238px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level0 .R {
+    background-color: white;
+    background-image: url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat;
+    background-position: -238px 0px;
+    background-size: 1936px; }
+  .level0 .up.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -224px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .up.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -96px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .up.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -96px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .up.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -224px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .up.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px -96px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .down.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -128px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .down.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px 0px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .down.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px 0px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .down.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -128px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .down.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px 0px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .left.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -160px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .left.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -32px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .left.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -32px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .left.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -160px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .left.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px -32px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .right.sharp {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -192px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .right.frost {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -64px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .right.fire {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -224px -64px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .right.static {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -128px -192px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .right.acid {
+    background-color: blue;
+    background-image: url(sprites/Dragons.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -32px -64px, -238px 0px;
+    background-size: 384px, 1936px; }
+  .level0 .food {
+    background-color: green;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1836px -510px, -238px 0px;
+    background-size: 1936px, 1936px; }
+  .level0 .gold {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1530px -374px, -238px 0px;
+    background-size: 1936px, 1936px; }
+  .level0 .silver {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1496px -374px, -238px 0px;
+    background-size: 1936px, 1936px; }
+  .level0 .diamonds {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -476px -374px, -238px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level0 .emeralds {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -510px -442px, -238px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level0 .rubies {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -476px -442px, -238px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level0 .amethyst {
+    background-color: yellow;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -476px -408px, -238px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level0 .sharp {
+    background-color: red;
+    background-image: url(sprites/roguelikeDungeon.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -510px -544px, -238px 0px;
+    background-size: 984px 610px, 1936px; }
+  .level0 .fire {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1224px -306px, -238px 0px;
+    background-size: 1936px, 1936px; }
+  .level0 .frost {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1122px -306px, -238px 0px;
+    background-size: 1936px, 1936px; }
+  .level0 .static {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1190px -306px, -238px 0px;
+    background-size: 1936px, 1936px; }
+  .level0 .acid {
+    background-color: red;
+    background-image: url(sprites/roguelikeSheet.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: -1836px -476px, -238px 0px;
+    background-size: 1936px, 1936px; }
+  .level0 .werewolf {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -68px 0, -648px -102px, -136px -34px, -104px -34px, -206px -136px, 0 -68px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .tourist {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -953px -170px, -682px -136px, -136px -136px, -104px -272px, -512px -238px, 0 0, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .daredevil {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1498px -238px, -68px 0, -68px 0, -784px 0, -104px 0, -68px -34px, -376px 0, -34px -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .hiker {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1428px -100px, -68px 0, -68px 0, -885.25px -136px, -104px 0, -68px -170px, -342px -102px, -33px 0, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .wizard {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1462px -67px, -68px 0, -986px -272px, -749.25px -272px, -138px -204px, -104px 0, -376px -238px, -33px -68px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .illuminati {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1124px -102px, -68px 0, -954px -238px, -715.25px -170px, -138px -272px, -102px -170px, -410px -68px, 0 -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .marauder {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1634px -68px, -68px 0, -1020px 0, -749.25px -102px, -138px 0, -102px 0, -512px -170px, 0 -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .larper {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1736px -272px, -1462px 0, -986px -238px, -851.25px -34px, -104px -136px, -102px -68px, -410px -136px, 0 -102px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .robot {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -1020px -204px, -68px 0, -138px -68px, -102px -68px, -410px -136px, 0 0, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .regent {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1600px -136px, -1292px -68px, -1020px -68px, -749.25px -136px, -138px -102px, -102px -102px, -274px -204px, -34px -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .scientist {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -68px 0, -716px -272px, -136px 0, -104px -68px, -410px -306px, 0 0, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .alien {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -68px 0, -68px 0, -1055px -272px, -70px 0, -68px 0, -70px 0, -70px 0, -34px -102px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .sorcerer {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1530px 0, -68px 0, -952px -272px, -784px -238px, -138px 0, -102px -34px, -376px -204px, 0 -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .explorer {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1532px -308px, -68px 0, -1054px -272px, -681.25px 0, -138px -238px, -102px -238px, -410px -136px, 0 -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .archaeologist {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1600px -204px, -68px 0, -952px -272px, -715.25px -136px, -104px -306px, -104px -170px, -342px 0, 0 0, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .knight {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 0 -374px, -238px 0px;
+    background-size: 1836px, 1936px; }
+  .level0 .diver {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1702px -170px, -68px 0, -68px 0, -885.25px -170px, -138px 0, -102px -102px, -478px -306px, -34px -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .barbarian {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1601px -304px, -68px 0, -952px -204px, -715.25px -102px, -138px 0, -102px 0, -512px -170px, 0 -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .pitfighter {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1532px -306px, -68px 0, -988px -204px, -784px -102px, -138px -34px, -102px -34px, -478px -204px, -34px -68px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .rogue {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1498px -238px, -68px 0, -68px 0, -715.25px -34px, -138px 0, -102px 0, -512px -170px, 0 -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+  .level0 .tyrant {
+    background-color: orange;
+    background-image: url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeChar.png), url(sprites/roguelikeSheet.png);
+    background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+    background-position: -1736px -170px, -1156px -272px, -1020px -68px, -749.25px 0, -138px -68px, -102px 0, -580px -204px, 0 -34px, -238px 0px;
+    background-size: 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1836px, 1936px; }
+
+.header {
+  text-align: center;
+  color: white; }
+
+.sidebar {
+  /*width: 250px;*/
+  /*height: calc(100vh - 50px);*/
+  color: white; }
+
+.missing {
+  background: purple; }
+
+.map {
+  text-align: center;
+  border: 1px solid black; }
+
+.arrowBtn {
+  width: 56px;
+  height: 56px; }
+
+.dualBtn {
+  width: 112px;
+  height: 56px; }

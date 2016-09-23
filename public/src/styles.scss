@@ -1,0 +1,467 @@
+$dungeonSprite: "sprites/roguelikeDungeon.png";
+$rogueSprite: "sprites/roguelikeSheet.png";
+$dragon: "sprites/Dragons.png";
+$charSprite: "sprites/roguelikeChar.png";
+$cellSize: 32px;
+$scaleFactor: 2;
+$xFactor: -17px * $scaleFactor;
+$dungeonSize: 492px * $scaleFactor 305px * $scaleFactor;
+$rogueSize: 968px * $scaleFactor;
+$charSize: 918px * $scaleFactor;
+@media only screen and (max-width: 768px) {
+  .non-essential {
+    display: none;
+  }
+}
+
+@mixin brownLvl($sprite, $pos, $size, $backup) {
+  background-color: $backup;
+  background-image: url(#{$sprite}),
+  url(#{$rogueSprite});
+  background-repeat: no-repeat, no-repeat;
+  background-position: $pos, 6 * $xFactor 0px;
+  background-size: $size, $rogueSize;
+}
+
+@mixin greyLvl($sprite, $pos, $size, $backup) {
+  background-color: $backup;
+  background-image: url(#{$sprite}),
+  url(#{$rogueSprite});
+  background-repeat: no-repeat, no-repeat;
+  background-position: $pos, 7 * $xFactor 0px;
+  background-size: $size, $rogueSize;
+}
+
+@mixin charBrownLvl($sprite, $pos1, $pos2, $pos3, $pos4, $pos5, $pos6, $pos7, $pos8, $size, $backup) {
+  background-color: $backup;
+  background-image: url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$rogueSprite});
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: $pos1, $pos2, $pos3, $pos4, $pos5, $pos6, $pos7, $pos8, 6 * $xFactor 0px;
+  background-size: $size, $size, $size, $size, $size, $size, $size, $size, $rogueSize;
+}
+
+@mixin charGreyLvl($sprite, $pos1, $pos2, $pos3, $pos4, $pos5, $pos6, $pos7, $pos8, $size, $backup) {
+  background-color: $backup;
+  background-image: url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$sprite}), url(#{$rogueSprite});
+  background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-position: $pos1, $pos2, $pos3, $pos4, $pos5, $pos6, $pos7, $pos8, 7 * $xFactor 0px;
+  background-size: $size, $size, $size, $size, $size, $size, $size, $size, $rogueSize;
+}
+
+body {
+  font-family: arial;
+  background: black;
+}
+
+#container {
+  background: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+	height: 100vh;
+}
+
+.boardRow {
+  display: block;
+  height: $cellSize;
+  line-height: $cellSize;
+}
+
+.tile {
+  display: inline-block;
+  height: $cellSize;
+  width: $cellSize;
+  line-height: $cellSize;
+}
+
+.level1 {
+  /*brown levels*/
+  .E {
+    @include brownLvl($dungeonSprite, 0 0, $dungeonSize, black);
+  }
+  .R {
+    background-color: white;
+    background-image: url(#{$rogueSprite});
+    background-repeat: no-repeat;
+    background-position: 6 * $xFactor 0px;
+    background-size: $rogueSize;
+  }
+  .up {
+    &.sharp {
+      @include brownLvl($dragon, 7 * -32px 7 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include brownLvl($dragon, 4 * -32px 3 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include brownLvl($dragon, 7 * -32px 3 * -32px, 384px, blue);
+    }
+    &.static {
+      @include brownLvl($dragon, 4 * -32px 7 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include brownLvl($dragon, 1 * -32px 3 * -32px, 384px, blue);
+    }
+  }
+  .down {
+    &.sharp {
+      @include brownLvl($dragon, 7 * -32px 4 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include brownLvl($dragon, 4 * -32px 0 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include brownLvl($dragon, 7 * -32px 0 * -32px, 384px, blue);
+    }
+    &.static {
+      @include brownLvl($dragon, 4 * -32px 4 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include brownLvl($dragon, 1 * -32px 0 * -32px, 384px, blue);
+    }
+  }
+  .left {
+    &.sharp {
+      @include brownLvl($dragon, 7 * -32px 5 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include brownLvl($dragon, 4 * -32px 1 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include brownLvl($dragon, 7 * -32px 1 * -32px, 384px, blue);
+    }
+    &.static {
+      @include brownLvl($dragon, 4 * -32px 5 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include brownLvl($dragon, 1 * -32px 1 * -32px, 384px, blue);
+    }
+  }
+  .right {
+    &.sharp {
+      @include brownLvl($dragon, 7 * -32px 6 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include brownLvl($dragon, 4 * -32px 2 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include brownLvl($dragon, 7 * -32px 2 * -32px, 384px, blue);
+    }
+    &.static {
+      @include brownLvl($dragon, 4 * -32px 6 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include brownLvl($dragon, 1 * -32px 2 * -32px, 384px, blue);
+    }
+  }
+  .food {
+    @include brownLvl($rogueSprite, 54 * $xFactor 15 * $xFactor, $rogueSize, green);
+  }
+  .gold {
+    @include brownLvl($rogueSprite, 45 * $xFactor 11 * $xFactor, $rogueSize, yellow);
+  }
+  .silver {
+    @include brownLvl($rogueSprite, 44 * $xFactor 11 * $xFactor, $rogueSize, yellow);
+  }
+  .diamonds {
+    @include brownLvl($dungeonSprite, 14 * $xFactor 11 * $xFactor, $dungeonSize, yellow);
+  }
+  .emeralds {
+    @include brownLvl($dungeonSprite, 15 * $xFactor 13 * $xFactor, $dungeonSize, yellow);
+  }
+  .rubies {
+    @include brownLvl($dungeonSprite, 14 * $xFactor 13 * $xFactor, $dungeonSize, yellow);
+  }
+  .amethyst {
+    @include brownLvl($dungeonSprite, 14 * $xFactor 12 * $xFactor, $dungeonSize, yellow);
+  }
+  .sharp {
+    @include brownLvl($dungeonSprite, 15 * $xFactor 16 * $xFactor, $dungeonSize, red);
+  }
+  .fire {
+    @include brownLvl($rogueSprite, 36 * $xFactor 9 * $xFactor, $rogueSize, red);
+  }
+  .frost {
+    @include brownLvl($rogueSprite, 33 * $xFactor 9 * $xFactor, $rogueSize, red);
+  }
+  .static {
+    @include brownLvl($rogueSprite, 35 * $xFactor 9 * $xFactor, $rogueSize, red);
+  }
+  .acid {
+    @include brownLvl($rogueSprite, 54 * $xFactor 14 * $xFactor, $rogueSize, red);
+  }
+  .werewolf {
+    @include charBrownLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 2 * $xFactor 0, 19 * $xFactor - 2 3 * $xFactor, 4 * $xFactor 1 * $xFactor, 3 * $xFactor - 2 1 * $xFactor, 6 * $xFactor - 2 4 * $xFactor, 0 2 * $xFactor, $charSize, orange);
+  }
+  .tourist {
+    @include charBrownLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 28 * $xFactor - 1 5 * $xFactor, 20 * $xFactor - 2 4 * $xFactor, 4 * $xFactor 4 * $xFactor, 3 * $xFactor - 2 8 * $xFactor, 15 * $xFactor - 2 7 * $xFactor, 0 0, $charSize, orange);
+  }
+  .daredevil {
+    @include charBrownLvl($charSprite, 44 * $xFactor - 2 7 * $xFactor, 2 * $xFactor 0, 2 * $xFactor 0, 23 * $xFactor - 2 0, 3 * $xFactor - 2 0, 2 * $xFactor 1 * $xFactor, 11 * $xFactor - 2 0, 1 * $xFactor 1 * $xFactor, $charSize, orange);
+  }
+  .hiker {
+    @include charBrownLvl($charSprite, 42 * $xFactor 3 * $xFactor +2, 2 * $xFactor 0, 2 * $xFactor 0, 26 * $xFactor - 1.25 4 * $xFactor, 3 * $xFactor - 2 0, 2 * $xFactor 5 * $xFactor, 10 * $xFactor - 2 3 * $xFactor, 1 * $xFactor +1 0, $charSize, orange);
+  }
+  .wizard {
+    @include charBrownLvl($charSprite, 43 * $xFactor 2 * $xFactor +1, 2 * $xFactor 0, 29 * $xFactor 8 * $xFactor, 22 * $xFactor - 1.25 8 * $xFactor, 4 * $xFactor - 2 6 * $xFactor, 3 * $xFactor - 2 0, 11 * $xFactor - 2 7 * $xFactor, 1 * $xFactor +1 2 * $xFactor, $charSize, orange);
+  }
+  .illuminati {
+    @include charBrownLvl($charSprite, 33 * $xFactor - 2 3 * $xFactor, 2 * $xFactor 0, 28 * $xFactor - 2 7 * $xFactor, 21 * $xFactor - 1.25 5 * $xFactor, 4 * $xFactor - 2 8 * $xFactor, 3 * $xFactor 5 * $xFactor, 12 * $xFactor - 2 2 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .marauder {
+    @include charBrownLvl($charSprite, 48 * $xFactor - 2 2 * $xFactor, 2 * $xFactor 0, 30 * $xFactor 0, 22 * $xFactor - 1.25 3 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 0, 15 * $xFactor - 2 5 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .larper {
+    @include charBrownLvl($charSprite, 51 * $xFactor - 2 8 * $xFactor, 43 * $xFactor 0, 29 * $xFactor 7 * $xFactor, 25 * $xFactor - 1.25 1 * $xFactor, 3 * $xFactor - 2 4 * $xFactor, 3 * $xFactor 2 * $xFactor, 12 * $xFactor - 2 4 * $xFactor, 0 3 * $xFactor, $charSize, orange);
+  }
+  .robot {
+    @include charBrownLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 30 * $xFactor 6 * $xFactor, 2 * $xFactor 0, 4 * $xFactor - 2 2 * $xFactor, 3 * $xFactor 2 * $xFactor, 12 * $xFactor - 2 4 * $xFactor, 0 0, $charSize, orange);
+  }
+  .regent {
+    @include charBrownLvl($charSprite, 47 * $xFactor - 2 4 * $xFactor, 38 * $xFactor 2 * $xFactor, 30 * $xFactor 2 * $xFactor, 22 * $xFactor - 1.25 4 * $xFactor, 4 * $xFactor - 2 3 * $xFactor, 3 * $xFactor 3 * $xFactor, 8 * $xFactor - 2 6 * $xFactor, 1 * $xFactor 1 * $xFactor, $charSize, orange);
+  }
+    .scientist {
+    @include charBrownLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 2 * $xFactor 0, 21 * $xFactor - 2 8 * $xFactor, 4 * $xFactor 0, 3 * $xFactor - 2 2 * $xFactor, 12 * $xFactor - 2 9 * $xFactor, 0 0, $charSize, orange);
+  }
+  .alien {
+    @include charBrownLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 31 * $xFactor - 1 8 * $xFactor, 2 * $xFactor - 2 0, 2 * $xFactor 0, 2 * $xFactor - 2 0, 2 * $xFactor - 2 0, 1 * $xFactor 3 * $xFactor, $charSize, orange);
+  }
+  .sorcerer {
+    @include charBrownLvl($charSprite, 45 * $xFactor 0, 2 * $xFactor 0, 28 * $xFactor 8 * $xFactor, 23 * $xFactor - 2 7 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 1 * $xFactor, 11 * $xFactor - 2 6 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .explorer {
+    @include charBrownLvl($charSprite, 45 * $xFactor - 2 9 * $xFactor - 2, 2 * $xFactor 0, 31 * $xFactor 8 * $xFactor, 20 * $xFactor - 1.25 0, 4 * $xFactor - 2 7 * $xFactor, 3 * $xFactor 7 * $xFactor, 12 * $xFactor - 2 4 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .archaeologist {
+    @include charBrownLvl($charSprite, 47 * $xFactor - 2 6 * $xFactor, 2 * $xFactor 0, 28 * $xFactor 8 * $xFactor, 21 * $xFactor - 1.25 4 * $xFactor, 3 * $xFactor - 2 9 * $xFactor, 3 * $xFactor - 2 5 * $xFactor, 10 * $xFactor - 2 0, 0 0, $charSize, orange);
+  }
+  .knight {
+    @include brownLvl($charSprite, 0 11 * $xFactor, $charSize, orange);
+  }
+  .diver {
+    @include charBrownLvl($charSprite, 50 * $xFactor - 2 5 * $xFactor, 2 * $xFactor 0, 2 * $xFactor 0, 26 * $xFactor - 1.25 5 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 3 * $xFactor, 14 * $xFactor - 2 9 * $xFactor, 1 * $xFactor 1 * $xFactor, $charSize, orange);
+  }
+  .barbarian {
+    @include charBrownLvl($charSprite, 47 * $xFactor - 3 9 * $xFactor +2, 2 * $xFactor 0, 28 * $xFactor 6 * $xFactor, 21 * $xFactor - 1.25 3 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 0, 15 * $xFactor - 2 5 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .pitfighter {
+    @include charBrownLvl($charSprite, 45 * $xFactor - 2 9 * $xFactor, 2 * $xFactor 0, 29 * $xFactor - 2 6 * $xFactor, 23 * $xFactor - 2 3 * $xFactor, 4 * $xFactor - 2 1 * $xFactor, 3 * $xFactor 1 * $xFactor, 14 * $xFactor - 2 6 * $xFactor, 1 * $xFactor 2 * $xFactor, $charSize, orange);
+  }
+  .rogue {
+    @include charBrownLvl($charSprite, 44 * $xFactor - 2 7 * $xFactor, 2 * $xFactor 0, 2 * $xFactor 0, 21 * $xFactor - 1.25 1 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 0, 15 * $xFactor - 2 5 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .tyrant {
+    @include charBrownLvl($charSprite, 51 * $xFactor - 2 5 * $xFactor, 34 * $xFactor 8 * $xFactor, 30 * $xFactor 2 * $xFactor, 22 * $xFactor - 1.25 0, 4 * $xFactor - 2 2 * $xFactor, 3 * $xFactor 0, 17 * $xFactor - 2 6 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+}
+
+.level0 {
+  /*grey levels*/
+  .E {
+    @include greyLvl($dungeonSprite, 0px 1 * $xFactor, $dungeonSize, black);
+  }
+  .R {
+    background-color: white;
+    background-image: url(#{$rogueSprite});
+    background-repeat: no-repeat;
+    background-position: 7 * $xFactor 0px;
+    background-size: $rogueSize;
+  }
+    .up {
+    &.sharp {
+      @include greyLvl($dragon, 7 * -32px 7 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include greyLvl($dragon, 4 * -32px 3 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include greyLvl($dragon, 7 * -32px 3 * -32px, 384px, blue);
+    }
+    &.static {
+      @include greyLvl($dragon, 4 * -32px 7 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include greyLvl($dragon, 1 * -32px 3 * -32px, 384px, blue);
+    }
+  }
+  .down {
+    &.sharp {
+      @include greyLvl($dragon, 7 * -32px 4 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include greyLvl($dragon, 4 * -32px 0 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include greyLvl($dragon, 7 * -32px 0 * -32px, 384px, blue);
+    }
+    &.static {
+      @include greyLvl($dragon, 4 * -32px 4 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include greyLvl($dragon, 1 * -32px 0 * -32px, 384px, blue);
+    }
+  }
+  .left {
+    &.sharp {
+      @include greyLvl($dragon, 7 * -32px 5 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include greyLvl($dragon, 4 * -32px 1 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include greyLvl($dragon, 7 * -32px 1 * -32px, 384px, blue);
+    }
+    &.static {
+      @include greyLvl($dragon, 4 * -32px 5 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include greyLvl($dragon, 1 * -32px 1 * -32px, 384px, blue);
+    }
+  }
+  .right {
+    &.sharp {
+      @include greyLvl($dragon, 7 * -32px 6 * -32px, 384px, blue);
+    }
+    &.frost {
+      @include greyLvl($dragon, 4 * -32px 2 * -32px, 384px, blue);
+    }
+    &.fire {
+      @include greyLvl($dragon, 7 * -32px 2 * -32px, 384px, blue);
+    }
+    &.static {
+      @include greyLvl($dragon, 4 * -32px 6 * -32px, 384px, blue);
+    }
+    &.acid {
+      @include greyLvl($dragon, 1 * -32px 2 * -32px, 384px, blue);
+    }
+  }
+  .food {
+    @include greyLvl($rogueSprite, 54 * $xFactor 15 * $xFactor, $rogueSize, green);
+  }
+  .gold {
+    @include greyLvl($rogueSprite, 45 * $xFactor 11 * $xFactor, $rogueSize, yellow);
+  }
+  .silver {
+    @include greyLvl($rogueSprite, 44 * $xFactor 11 * $xFactor, $rogueSize, yellow);
+  }
+  .diamonds {
+    @include greyLvl($dungeonSprite, 14 * $xFactor 11 * $xFactor, $dungeonSize, yellow);
+  }
+  .emeralds {
+    @include greyLvl($dungeonSprite, 15 * $xFactor 13 * $xFactor, $dungeonSize, yellow);
+  }
+  .rubies {
+    @include greyLvl($dungeonSprite, 14 * $xFactor 13 * $xFactor, $dungeonSize, yellow);
+  }
+  .amethyst {
+    @include greyLvl($dungeonSprite, 14 * $xFactor 12 * $xFactor, $dungeonSize, yellow);
+  }
+  .sharp {
+    @include greyLvl($dungeonSprite, 15 * $xFactor 16 * $xFactor, $dungeonSize, red);
+  }
+  .fire {
+    @include greyLvl($rogueSprite, 36 * $xFactor 9 * $xFactor, $rogueSize, red);
+  }
+  .frost {
+    @include greyLvl($rogueSprite, 33 * $xFactor 9 * $xFactor, $rogueSize, red);
+  }
+  .static {
+    @include greyLvl($rogueSprite, 35 * $xFactor 9 * $xFactor, $rogueSize, red);
+  }
+  .acid {
+    @include greyLvl($rogueSprite, 54 * $xFactor 14 * $xFactor, $rogueSize, red);
+  }
+    .werewolf {
+    @include charGreyLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 2 * $xFactor 0, 19 * $xFactor - 2 3 * $xFactor, 4 * $xFactor 1 * $xFactor, 3 * $xFactor - 2 1 * $xFactor, 6 * $xFactor - 2 4 * $xFactor, 0 2 * $xFactor, $charSize, orange);
+  }
+  .tourist {
+    @include charGreyLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 28 * $xFactor - 1 5 * $xFactor, 20 * $xFactor - 2 4 * $xFactor, 4 * $xFactor 4 * $xFactor, 3 * $xFactor - 2 8 * $xFactor, 15 * $xFactor - 2 7 * $xFactor, 0 0, $charSize, orange);
+  }
+  .daredevil {
+    @include charGreyLvl($charSprite, 44 * $xFactor - 2 7 * $xFactor, 2 * $xFactor 0, 2 * $xFactor 0, 23 * $xFactor - 2 0, 3 * $xFactor - 2 0, 2 * $xFactor 1 * $xFactor, 11 * $xFactor - 2 0, 1 * $xFactor 1 * $xFactor, $charSize, orange);
+  }
+  .hiker {
+    @include charGreyLvl($charSprite, 42 * $xFactor 3 * $xFactor +2, 2 * $xFactor 0, 2 * $xFactor 0, 26 * $xFactor - 1.25 4 * $xFactor, 3 * $xFactor - 2 0, 2 * $xFactor 5 * $xFactor, 10 * $xFactor - 2 3 * $xFactor, 1 * $xFactor +1 0, $charSize, orange);
+  }
+  .wizard {
+    @include charGreyLvl($charSprite, 43 * $xFactor 2 * $xFactor +1, 2 * $xFactor 0, 29 * $xFactor 8 * $xFactor, 22 * $xFactor - 1.25 8 * $xFactor, 4 * $xFactor - 2 6 * $xFactor, 3 * $xFactor - 2 0, 11 * $xFactor - 2 7 * $xFactor, 1 * $xFactor +1 2 * $xFactor, $charSize, orange);
+  }
+  .illuminati {
+    @include charGreyLvl($charSprite, 33 * $xFactor - 2 3 * $xFactor, 2 * $xFactor 0, 28 * $xFactor - 2 7 * $xFactor, 21 * $xFactor - 1.25 5 * $xFactor, 4 * $xFactor - 2 8 * $xFactor, 3 * $xFactor 5 * $xFactor, 12 * $xFactor - 2 2 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .marauder {
+    @include charGreyLvl($charSprite, 48 * $xFactor - 2 2 * $xFactor, 2 * $xFactor 0, 30 * $xFactor 0, 22 * $xFactor - 1.25 3 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 0, 15 * $xFactor - 2 5 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .larper {
+    @include charGreyLvl($charSprite, 51 * $xFactor - 2 8 * $xFactor, 43 * $xFactor 0, 29 * $xFactor 7 * $xFactor, 25 * $xFactor - 1.25 1 * $xFactor, 3 * $xFactor - 2 4 * $xFactor, 3 * $xFactor 2 * $xFactor, 12 * $xFactor - 2 4 * $xFactor, 0 3 * $xFactor, $charSize, orange);
+  }
+  .robot {
+    @include charGreyLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 30 * $xFactor 6 * $xFactor, 2 * $xFactor 0, 4 * $xFactor - 2 2 * $xFactor, 3 * $xFactor 2 * $xFactor, 12 * $xFactor - 2 4 * $xFactor, 0 0, $charSize, orange);
+  }
+  .regent {
+    @include charGreyLvl($charSprite, 47 * $xFactor - 2 4 * $xFactor, 38 * $xFactor 2 * $xFactor, 30 * $xFactor 2 * $xFactor, 22 * $xFactor - 1.25 4 * $xFactor, 4 * $xFactor - 2 3 * $xFactor, 3 * $xFactor 3 * $xFactor, 8 * $xFactor - 2 6 * $xFactor, 1 * $xFactor 1 * $xFactor, $charSize, orange);
+  }
+    .scientist {
+    @include charGreyLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 2 * $xFactor 0, 21 * $xFactor - 2 8 * $xFactor, 4 * $xFactor 0, 3 * $xFactor - 2 2 * $xFactor, 12 * $xFactor - 2 9 * $xFactor, 0 0, $charSize, orange);
+  }
+  .alien {
+    @include charGreyLvl($charSprite, 2 * $xFactor 0, 2 * $xFactor 0, 31 * $xFactor - 1 8 * $xFactor, 2 * $xFactor - 2 0, 2 * $xFactor 0, 2 * $xFactor - 2 0, 2 * $xFactor - 2 0, 1 * $xFactor 3 * $xFactor, $charSize, orange);
+  }
+  .sorcerer {
+    @include charGreyLvl($charSprite, 45 * $xFactor 0, 2 * $xFactor 0, 28 * $xFactor 8 * $xFactor, 23 * $xFactor - 2 7 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 1 * $xFactor, 11 * $xFactor - 2 6 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .explorer {
+    @include charGreyLvl($charSprite, 45 * $xFactor - 2 9 * $xFactor - 2, 2 * $xFactor 0, 31 * $xFactor 8 * $xFactor, 20 * $xFactor - 1.25 0, 4 * $xFactor - 2 7 * $xFactor, 3 * $xFactor 7 * $xFactor, 12 * $xFactor - 2 4 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .archaeologist {
+    @include charGreyLvl($charSprite, 47 * $xFactor - 2 6 * $xFactor, 2 * $xFactor 0, 28 * $xFactor 8 * $xFactor, 21 * $xFactor - 1.25 4 * $xFactor, 3 * $xFactor - 2 9 * $xFactor, 3 * $xFactor - 2 5 * $xFactor, 10 * $xFactor - 2 0, 0 0, $charSize, orange);
+  }
+  .knight {
+    @include greyLvl($charSprite, 0 11 * $xFactor, $charSize, orange);
+  }
+  .diver {
+    @include charGreyLvl($charSprite, 50 * $xFactor - 2 5 * $xFactor, 2 * $xFactor 0, 2 * $xFactor 0, 26 * $xFactor - 1.25 5 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 3 * $xFactor, 14 * $xFactor - 2 9 * $xFactor, 1 * $xFactor 1 * $xFactor, $charSize, orange);
+  }
+  .barbarian {
+    @include charGreyLvl($charSprite, 47 * $xFactor - 3 9 * $xFactor +2, 2 * $xFactor 0, 28 * $xFactor 6 * $xFactor, 21 * $xFactor - 1.25 3 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 0, 15 * $xFactor - 2 5 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .pitfighter {
+    @include charGreyLvl($charSprite, 45 * $xFactor - 2 9 * $xFactor, 2 * $xFactor 0, 29 * $xFactor - 2 6 * $xFactor, 23 * $xFactor - 2 3 * $xFactor, 4 * $xFactor - 2 1 * $xFactor, 3 * $xFactor 1 * $xFactor, 14 * $xFactor - 2 6 * $xFactor, 1 * $xFactor 2 * $xFactor, $charSize, orange);
+  }
+  .rogue {
+    @include charGreyLvl($charSprite, 44 * $xFactor - 2 7 * $xFactor, 2 * $xFactor 0, 2 * $xFactor 0, 21 * $xFactor - 1.25 1 * $xFactor, 4 * $xFactor - 2 0, 3 * $xFactor 0, 15 * $xFactor - 2 5 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+  .tyrant {
+    @include charGreyLvl($charSprite, 51 * $xFactor - 2 5 * $xFactor, 34 * $xFactor 8 * $xFactor, 30 * $xFactor 2 * $xFactor, 22 * $xFactor - 1.25 0, 4 * $xFactor - 2 2 * $xFactor, 3 * $xFactor 0, 17 * $xFactor - 2 6 * $xFactor, 0 1 * $xFactor, $charSize, orange);
+  }
+}
+
+.header {
+  text-align: center;
+  color: white;
+}
+
+.sidebar {
+  /*width: 250px;*/
+  /*height: calc(100vh - 50px);*/
+  color: white;
+}
+
+.missing {
+  background: purple;
+}
+
+.map {
+  text-align: center;
+  border: 1px solid black;
+}
+
+.arrowBtn {
+  width: $cellSize * 7 / 4;
+  height: $cellSize * 7 / 4;
+}
+
+.dualBtn {
+  width: $cellSize * 7 / 2;
+  height: $cellSize * 7 / 4;
+}
